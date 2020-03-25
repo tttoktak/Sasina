@@ -10,8 +10,8 @@ import False from './Component/False'
 import Fix from './Component/Fix'
 import Newton from './Component/Newton'
 import Secant from './Component/Secant'
-//import Bwoh from './Component/Bwoh'
-//import Bwoh2 from './Component/Bwoh2'
+import Bwoh from './Component/Bwoh'
+import Bwoh2 from './Component/Bwoh2'
 
 import { Menu } from 'antd';
 
@@ -99,7 +99,12 @@ class App extends Component {
             <Route path='/secant'>
               <Secant />
             </Route>
-            
+            <Route path='/bwoh'>
+              <Bwoh />
+            </Route>
+            <Route path='/bwoh2'>
+              <Bwoh2 />
+            </Route>
 
           </Switch>
         </div>

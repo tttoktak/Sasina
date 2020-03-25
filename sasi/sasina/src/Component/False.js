@@ -59,7 +59,7 @@ export default class False extends Component {
                     <Input name="Xl" onChange={this.input.bind(this)} placeholder="Xl" />
                     
                 </div>
-                <Button style={{  margin: "20px" }} class="bg" type="primary" size="large" onClick={this.cal.bind(this)}>Submit</Button>
+                <Button style={{margin:"20px"}}type="primary" size="large" onClick={this.cal.bind(this)}>Submit</Button>
                 {<Table style={{width:"900px",margin:"auto"}} dataSource={this.state.result} columns={header} pagination={false} />}
             </div>
         );
