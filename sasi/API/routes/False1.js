@@ -23,16 +23,19 @@ router.post('/False1', (req, res) => {
     var i = 1;
     if (eq.eval(scopel) * eq.eval(scoper) < 0) {
         do {
-            var xm = xr-(((code.evaluate(scoper))*(xl-xr))/((code.evaluate(scopel))-(code.evaluate(scoper))));
-            let scopem = { x: xm };
-            
-            if (code.eval(scopel) * code.eval(scopem) < 0) {
+            var fxl = eq.evaluate(scopel)
+            var fxr = eq.evaluate(scoper)
+            var xm = xr - ((fxr * (xl - xr)) / (fxl - fxr))
+            let scopem = {
+                x: xm
+            };
+
+            if (eq.eval(scopel) * eq.eval(scopem) < 0) {
                 xr = xm;
-            }
-            else {
+            } else {
                 xl = xm;
             }
-            check = math.abs((xm - xo) / xm) * 100;
+            error = math.abs((xm - xo) / xm) * 100;
             result1.push({
                 'iteration': i,
                 'xl': xl,
@@ -43,7 +46,7 @@ router.post('/False1', (req, res) => {
             xo = xm;
             i++;
             console.log(check)
-        } while (chreck > 0.000001);
+        } while (check > 0.000001);
     }
     res.json({
         result:result1
